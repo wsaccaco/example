@@ -1,0 +1,19 @@
+{
+  "name": "test01",
+  "version": "0.0.1",
+  "description": "Pruebas de herramientas para mis proyectos",
+  "main": "main.js",
+  "scripts": {
+    "test": "productores.js"
+  },
+  "author": "wsaccaco",
+  "license": "ISC",
+  "dependencies": {
+    "grunt-cli": "^0.1.13"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-browserify": "^0.5.0",
+    "gulp-uglify": "^0.2.1"
+  }
+}
