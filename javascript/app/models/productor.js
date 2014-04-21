@@ -1,4 +1,4 @@
-var Productor = (function () {
+productor = (function () {
 
 	var nombre = 'jose',
 		edad = 22;
@@ -10,11 +10,11 @@ var Productor = (function () {
 	return {
 
 		save : function () {
-			console.log('se guardo correctamente');
+			console.log('se guardo correctamente23');
 		},
 
-		saludar : function ( duplicarEdad ) {
-			console.log('hola tienes' + duplicarEdad + 'de edad');
+		saludar : function () {
+			console.log('hola tienes ' + duplicarEdad() + ' de edad');
 		}
 	}
 

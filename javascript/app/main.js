@@ -1,1 +1,2 @@
-productor = require('productor');
+require('./models/productor');
+require('./models/parcela');

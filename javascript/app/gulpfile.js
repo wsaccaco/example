@@ -1,16 +1,26 @@
 var gulp = require('gulp'),
 	browserify = require('browserify'),
-	uglify = require('uglify');
+	source = require('vinyl-source-stream'),
+	uglify = require('gulp-uglify');
+	streamify = require('gulp-streamify');
 
 var path = {
-	scripts = ''
+	scripts : './main.js'
 };
 
 gulp.task('js', function () {
-	return gulp.src(path.scripts)
-		.pipe(browserify())
-		.pipe(uglify())
-		.pipe(gulp.dest('./dist/main.js'))
+	browserify(path.scripts).bundle()
+	.pipe(source('main.min.js'))
+	.pipe(streamify( uglify() ))
+	.pipe(gulp.dest('./dist'))
+})
+
+
+gulp.task('watch', function() {
+  	// Watch .js files
+
+	gulp.watch('./models/*' , ['js']);
 });
 
-gulp.task('default',['js']);
+
+gulp.task('default',['js','watch']);
